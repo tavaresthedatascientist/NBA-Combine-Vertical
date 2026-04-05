@@ -22,7 +22,7 @@ The analysis combines statistical modeling, visualization, and hypothesis testin
 
 ## Dataset
 
-- Source: Kaggle NBA Draft Combine dataset  
+- Source: GitHub NBA Draft Combine dataset  
 - Sample size: **N = 517 players**  
 - Years: 2009–2017  
 
