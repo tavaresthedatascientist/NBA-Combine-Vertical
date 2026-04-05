@@ -1,49 +1,93 @@
-## NBA Draft Combine: Predictors of Vertical Jump Performance 
+# NBA Draft Combine Analysis: Vertical Jump & Draft Value
 
-## Overview: 
-This project analyzes how a basketball player's physical attributes influence their max vertical jump at the NBA Draft Combine. 
-Using combine measurement data from 2009-2017, I applied correlation analysis and multiple linear regression to identify which physical factors best predict a player's leaping ability. 
-Results suggest that body composition is a stronger predictor of explosiveness rather than height or weight alone. 
+## Overview
 
+This project analyzes NBA Draft Combine data (2009–2017) to examine:
 
-## Research Question:
-Which physical attributes (height, weight, body fat %) most strongly predict vertical jump performance at the NBA Draft Combine?
+- What physical attributes predict vertical jump performance  
+- Whether vertical jump is associated with NBA draft position  
+- Whether size-adjusted explosiveness provides a more meaningful signal of player evaluation  
+
+The analysis combines statistical modeling and hypothesis testing to better understand how physical traits and performance metrics relate to draft outcomes.
+
+---
+
+## Research Questions
+
+1. Which physical attributes (height, weight, body fat %) best predict vertical jump performance?  
+2. Is vertical jump associated with NBA draft position?  
+3. Does performance relative to body composition (size-adjusted explosiveness) provide additional insight?
+
+---
 
 ## Dataset
-Kaggle NBA Draft Combine dataset
-N = 517 players 
 
-## Methods 
-- Exploratory scatterplots with regression lines
-- Pearson correlation analysis
-- Multiple linear regression modeling
+- Source: Kaggle NBA Draft Combine dataset  
+- Sample size: **N = 517 players**  
+- Years: 2009–2017  
 
+---
 
-## Key Findings 
-- R**2 = 0.28 - height, weight, and body fat together explain about 28% of the variation in vertical jump. That suggests that other factors e.g. (athleticism, training regimen, and genetics) play a role in leaping ability.
-- All three variables are negatively correlated with vertical jump.
+## Methods
 
-## Regression Coefficients (Multiple Linear Model)
-***These represent the expected change in vertical jump (in inches) for a one-unit increase in the predictor, holding variables constant.
-- Height: -0.42, indicating for every 1 inch taller a player is, their vertical jump drops by 0.42 inches.
-- Weight: +0.01, indicating no independent effect when controlling for height and body fat.
-- Body fat: -0.56, indicating the strongest independent association, for every 1% increase in body fat percentage, vertical leap drops by 0.56 inches.
-  
-***Intercept: 69.23 - this intercept represents the model's predicted vertical jumpwhen all predictors are zero, which isn't practical or meaningful given the context of this dataset. 
+- Exploratory data analysis and visualization (scatterplots with regression lines)  
+- Pearson and Spearman correlation analysis  
+- Multiple linear regression modeling  
+- Residual-based feature engineering (size-adjusted vertical jump)  
 
+---
 
+## Key Findings
 
-## Key Takeaways: 
-Controlling for both height and weight, body fat percentage shows the strongest independent negative association with vertical jumping performance, this suggests that body composition may play a more critical role in explosiveness than structural size alone. 
+- Height, weight, and body fat percentage are negatively associated with vertical jump  
+- The regression model explains approximately **28% of the variation** in vertical jump ($R^2 \approx 0.28$)  
+- **Raw vertical jump shows little to no meaningful relationship with draft position**  
+- **Size-adjusted explosiveness provides a more informative signal**, suggesting that performance relative to body composition is more relevant than absolute performance  
 
-## Visualizations:
-![Height vs Vertical Jump](output/height_vs_vertical.png)
-![Weight vs Vertical Jump](output/weight_vs_vertical.png)
-![Body Fat vs Vertical Jump](output/bodyfat_vs_vertical.png)
+---
 
-## How to Run:
-1. Clone the repository
-2. Install dependencies: pip install pandas numpy matplotlib seaborn scikit-learn
-3. Open notebooks/vertical_jump_analysis.ipynb
-4. Run all cells
-  
+## Regression Insights
+
+These coefficients represent the expected change in vertical jump (in inches), holding other variables constant:
+
+- **Height:** -0.42 → taller players tend to jump lower  
+- **Weight:** +0.01 → minimal independent effect  
+- **Body Fat:** -0.56 → strongest negative association  
+
+**Intercept:** 69.23 (not directly interpretable in practice)
+
+---
+
+## Key Takeaway
+
+Body composition plays a more critical role in vertical jump performance than structural size alone. While raw vertical jump is not strongly associated with draft position, relative explosiveness (performance adjusted for body composition) offers a more meaningful perspective for evaluating players.
+
+---
+
+## Visualizations
+
+![Height vs Vertical Jump](output/height_vs_vertical.png)  
+![Weight vs Vertical Jump](output/weight_vs_vertical.png)  
+![Body Fat vs Vertical Jump](output/bodyfat_vs_vertical.png)  
+
+---
+
+## Project File
+
+- `nba_combine_analysis_final.ipynb` → Final structured analysis  
+
+---
+
+## Tools Used
+
+- Python (pandas, numpy)  
+- seaborn, matplotlib  
+- scikit-learn  
+- scipy  
+
+---
+
+## How to Run
+
+1. Clone the repository  
+2. Install dependencies:  
